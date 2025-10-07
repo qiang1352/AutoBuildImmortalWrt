@@ -44,6 +44,7 @@ uci add_list dhcp.lan.ra_flags='none'
 uci commit dhcp
 
 # Configure HomeProxy
+uci set homeproxy.config.china_dns_server='wan'
 uci set homeproxy.subscription.auto_update='1'
 uci set homeproxy.subscription.auto_update_time='2'
 uci set homeproxy.subscription.update_via_proxy='1'

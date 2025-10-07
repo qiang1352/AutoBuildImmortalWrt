@@ -43,6 +43,12 @@ uci set dhcp.lan.dns_service='0'
 uci add_list dhcp.lan.ra_flags='none'
 uci commit dhcp
 
+# Configure AutoReboot
+uci set autoreboot.cfg016bf2.enabled='1'
+uci set autoreboot.cfg016bf2.week='0'
+uci set autoreboot.cfg016bf2.hour='5'
+uci commit autoreboot
+
 # Configure HomeProxy
 uci set homeproxy.config.china_dns_server='wan'
 uci set homeproxy.subscription.auto_update='1'

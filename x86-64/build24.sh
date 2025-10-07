@@ -39,7 +39,6 @@ PACKAGES="$PACKAGES luci-theme-argon"
 PACKAGES="$PACKAGES luci-app-argon-config"
 PACKAGES="$PACKAGES luci-i18n-argon-config-zh-cn"
 PACKAGES="$PACKAGES luci-i18n-vlmcsd-zh-cn
-PACKAGES="$PACKAGES luci-app-autoreboot
 PACKAGES="$PACKAGES luci-i18n-autoreboot-zh-cn
 PACKAGES="$PACKAGES luci-i18n-arpbind-zh-cn
 PACKAGES="$PACKAGES ddns-go

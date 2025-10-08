@@ -27,9 +27,10 @@ if [ -n "$root_password" ]; then
   (echo "$root_password"; sleep 1; echo "$root_password") | passwd > /dev/null
 fi
 
-# Configure LUCI
-uci set luci.main.lang='zh_cn'
-uci commit luci
+# Configure Vlmcsd
+uci set vlmcsd.config.enabled='1'
+uci set vlmcsd.config.auto_activate='1'
+uci commit vlmcsd
 
 # Configure Ports
 uci add_list network.@device[0].ports=eth2

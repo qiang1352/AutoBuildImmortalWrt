@@ -62,6 +62,29 @@ uci set homeproxy.subscription.update_via_proxy='1'
 uci add_list homeproxy.subscription.subscription_url='https://53681.nginx24zfd.xyz/link/E7FXsv1TNaHf7Kke?sub=3'
 uci commit homeproxy
 
+# Configure PassWall
+uci set passwall.cfg0ab7d7.ss_type='shadowsocks-rust'
+uci set passwall.cfg0ab7d7.trojan_type='sing-box'
+uci set passwall.cfg0ab7d7.vmess_type='xray'
+uci set passwall.cfg0ab7d7.vless_type='xray'
+uci set passwall.cfg0ab7d7.hysteria2_type='sing-box'
+uci add passwall subscribe_list # =cfg128b02
+uci set passwall.@subscribe_list[-1].remark='ZFD'
+uci set passwall.@subscribe_list[-1].url='https://53681.nginx24zfd.xyz/link/E7FXsv1TNaHf7Kke?sub=3'
+uci set passwall.@subscribe_list[-1].allowInsecure='0'
+uci set passwall.@subscribe_list[-1].filter_keyword_mode='5'
+uci set passwall.@subscribe_list[-1].ss_type='global'
+uci set passwall.@subscribe_list[-1].trojan_type='global'
+uci set passwall.@subscribe_list[-1].vmess_type='global'
+uci set passwall.@subscribe_list[-1].vless_type='global'
+uci set passwall.@subscribe_list[-1].hysteria2_type='global'
+uci set passwall.@subscribe_list[-1].domain_strategy='global'
+uci set passwall.@subscribe_list[-1].auto_update='1'
+uci set passwall.@subscribe_list[-1].week_update='8'
+uci set passwall.@subscribe_list[-1].interval_update='24'
+uci set passwall.@subscribe_list[-1].user_agent='passwall'
+uci commit passwall
+
 # Configure LAN
 # More options: https://openwrt.org/docs/guide-user/base-system/basic-networking
 if [ -n "$lan_ip_address" ]; then

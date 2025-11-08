@@ -61,6 +61,12 @@ if [ "$INCLUDE_DOCKER" = "yes" ]; then
     echo "Adding package: luci-i18n-dockerman-zh-cn"
 fi
 
+echo "$(date '+%Y-%m-%d %H:%M:%S') - 🔄 正在清理软件包索引缓存..."
+# 清理 tmp 目录下所有可能残留的 Packages.* (索引文件) 和 opkg-lists 目录
+find /home/build/immortalwrt/tmp/ -name "Packages.*" -delete 2>/dev/null || true
+find /home/build/immortalwrt/tmp/ -name "opkg-lists" -type d -exec rm -rf {} + 2>/dev/null || true
+echo "$(date '+%Y-%m-%d %H:%M:%S') - ✅ 索引缓存清理完成，开始构建镜像。"
+
 # 构建镜像
 echo "$(date '+%Y-%m-%d %H:%M:%S') - Building image with the following packages:"
 echo "$PACKAGES"

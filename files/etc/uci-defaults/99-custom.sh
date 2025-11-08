@@ -46,14 +46,6 @@ uci del dhcp.lan.dhcpv6
 uci del dhcp.lan.ra_flags
 uci set dhcp.lan.dns_service='0'
 uci add_list dhcp.lan.ra_flags='none'
-uci del dhcp.cfg01411c.dns_redirect
-uci del dhcp.cfg01411c.rebind_localhost
-uci del dhcp.cfg01411c.nonwildcard
-uci del dhcp.cfg01411c.resolvfile
-uci del dhcp.cfg01411c.boguspriv
-uci del dhcp.cfg01411c.filterwin2k
-uci del dhcp.cfg01411c.filter_aaaa
-uci del dhcp.cfg01411c.filter_a
 uci commit dhcp
 
 # Configure AutoReboot

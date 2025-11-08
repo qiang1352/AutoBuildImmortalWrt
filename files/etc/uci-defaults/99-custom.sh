@@ -46,6 +46,14 @@ uci del dhcp.lan.dhcpv6
 uci del dhcp.lan.ra_flags
 uci set dhcp.lan.dns_service='0'
 uci add_list dhcp.lan.ra_flags='none'
+uci del dhcp.cfg01411c.dns_redirect
+uci del dhcp.cfg01411c.rebind_localhost
+uci del dhcp.cfg01411c.nonwildcard
+uci del dhcp.cfg01411c.resolvfile
+uci del dhcp.cfg01411c.boguspriv
+uci del dhcp.cfg01411c.filterwin2k
+uci del dhcp.cfg01411c.filter_aaaa
+uci del dhcp.cfg01411c.filter_a
 uci commit dhcp
 
 # Configure AutoReboot
@@ -73,7 +81,11 @@ uci set mosdns.config.enabled='1'
 uci commit mosdns
 
 # Configure HomeProxy
+uci del homeproxy.dns.disable_cache
+uci del homeproxy.dns.disable_cache_expire
 uci set homeproxy.config.china_dns_server='127.0.0.1'
+uci set homeproxy.routing.bypass_cn_traffic='0'
+uci set homeproxy.dns.default_server='default-dns'
 uci set homeproxy.subscription.auto_update='1'
 uci set homeproxy.subscription.auto_update_time='2'
 uci set homeproxy.subscription.update_via_proxy='1'

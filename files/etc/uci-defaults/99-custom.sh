@@ -54,6 +54,7 @@ uci set autoreboot.cfg016bf2.week='0'
 uci set autoreboot.cfg016bf2.hour='5'
 uci commit autoreboot
 
+# Configure MosDNS
 uci set mosdns.config.geo_auto_update='1'
 uci set mosdns.config.geoip_type='geoip'
 uci set mosdns.config.local_dns_redirect='1'

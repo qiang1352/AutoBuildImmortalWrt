@@ -78,6 +78,7 @@ uci set homeproxy.subscription.auto_update='1'
 uci set homeproxy.subscription.auto_update_time='2'
 uci set homeproxy.subscription.update_via_proxy='1'
 uci add_list homeproxy.subscription.subscription_url='https://53681.nginx24zfd.xyz/link/E7FXsv1TNaHf7Kke?sub=3'
+uci add_list homeproxy.subscription.subscription_url='https://wk.mlzone.top/yx/sub'
 uci commit homeproxy
 
 # Configure LAN

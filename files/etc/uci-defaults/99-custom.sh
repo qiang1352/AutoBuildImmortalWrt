@@ -73,16 +73,11 @@ uci set mosdns.config.enabled='1'
 uci commit mosdns
 
 # Configure HomeProxy
-uci del homeproxy.dns.disable_cache
-uci del homeproxy.dns.disable_cache_expire
 uci set homeproxy.config.china_dns_server='127.0.0.1'
-uci set homeproxy.routing.bypass_cn_traffic='0'
-uci set homeproxy.dns.default_server='default-dns'
 uci set homeproxy.subscription.auto_update='1'
 uci set homeproxy.subscription.auto_update_time='2'
 uci set homeproxy.subscription.update_via_proxy='1'
 uci add_list homeproxy.subscription.subscription_url='https://53681.nginx24zfd.xyz/link/E7FXsv1TNaHf7Kke?sub=3'
-uci add_list homeproxy.subscription.subscription_url='https://wk.mlzone.top/yx/sub'
 uci commit homeproxy
 
 # Configure LAN

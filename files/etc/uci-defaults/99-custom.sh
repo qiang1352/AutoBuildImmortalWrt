@@ -54,8 +54,25 @@ uci set autoreboot.cfg016bf2.week='0'
 uci set autoreboot.cfg016bf2.hour='5'
 uci commit autoreboot
 
+uci set mosdns.config.geo_auto_update='1'
+uci set mosdns.config.geoip_type='geoip'
+uci set mosdns.config.local_dns_redirect='1'
+uci set mosdns.config.prefer_ipv4_cn='1'
+uci set mosdns.config.custom_local_dns='1'
+uci add_list mosdns.config.local_dns='202.98.192.67'
+uci add_list mosdns.config.local_dns='202.98.198.167'
+uci del mosdns.config.remote_dns
+uci add_list mosdns.config.remote_dns='tls://8.8.8.8'
+uci add_list mosdns.config.remote_dns='tls://1.1.1.1'
+uci set mosdns.config.dns_leak='1'
+uci set mosdns.config.cache_size='16000'
+uci set mosdns.config.dump_file='1'
+uci set mosdns.config.dump_interval='3600'
+uci set mosdns.config.enabled='1'
+uci commit mosdns
+
 # Configure HomeProxy
-uci set homeproxy.config.china_dns_server='wan'
+uci set homeproxy.config.china_dns_server='127.0.0.1'
 uci set homeproxy.subscription.auto_update='1'
 uci set homeproxy.subscription.auto_update_time='2'
 uci set homeproxy.subscription.update_via_proxy='1'

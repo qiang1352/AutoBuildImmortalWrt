@@ -69,7 +69,6 @@ uci set mosdns.config.local_dns_redirect='1'
 uci set mosdns.config.prefer_ipv4_cn='1'
 uci del mosdns.config.remote_dns
 uci add_list mosdns.config.remote_dns='tls://8.8.8.8'
-uci add_list mosdns.config.remote_dns='tls://1.1.1.1'
 uci set mosdns.config.dns_leak='1'
 uci set mosdns.config.cache_size='16000'
 uci set mosdns.config.dump_file='1'
